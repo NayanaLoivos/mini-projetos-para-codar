@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Revenda de veículos</title>
+</head>
+<body>
+    <h1>Revenda de veículos</h1>
+    <form>
+        <p><label for="veiculo">Veículo:</label>
+        <input type="text" id="veiculomarcaeano" placeholder="Digite a marca e o ano"></p>
+        <p><label for="preco">Preço R$:</label>
+        <input type="number" id="veiculopreco" placeholder="Digite: xxxxx, xx"></p>
+        <input type="button" id="exibirpromocaodoveiculo" value="Ver promoção">
+        <p id="exibirmarcaeanodoveiculo"> </p>
+        <p id="exibirentradade50Percento"> </p>
+        <p id="exibirparcelamentoem12xSemJuros"> </p>
+    </form>
+
+    <script>
+        function calcularRevendaVeiculo () {
+            let marcaEAnoDoVeiculo = document.querySelector('#veiculomarcaeano').value;
+            let precoDoVeiculo = document.querySelector('#veiculopreco').value;
+
+            let exibirVeiculoEAno = document.querySelector('#exibirmarcaeanodoveiculo');
+            exibirVeiculoEAno.innerText = 'Promoção: ' + marcaEAnoDoVeiculo;
+
+            let calculoDeEntrada50PercentoDoVeiculo = precoDoVeiculo * 0.5;
+            let exibirEntrada50PercentoDoVeiculo = document.querySelector('#exibirentradade50Percento');
+            exibirEntrada50PercentoDoVeiculo.innerText = 'Entrada de R$: ' + calculoDeEntrada50PercentoDoVeiculo.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'});
+
+            let calculoParcelamentoEm12xSemJuros = calculoDeEntrada50PercentoDoVeiculo / 12;
+            let exibirParcelamentoEm12xSemJuros = document.querySelector('#exibirparcelamentoem12xSemJuros');
+            exibirParcelamentoEm12xSemJuros.innerText = '+ 12x sem juros de R$' + calculoParcelamentoEm12xSemJuros.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'});
+        }
+        let exibirPromocaoDoVeiculo = document.querySelector('#exibirpromocaodoveiculo');
+        exibirPromocaoDoVeiculo.addEventListener('click', calcularRevendaVeiculo);
+
+    </script>
+
+
+</body>
+</html>
