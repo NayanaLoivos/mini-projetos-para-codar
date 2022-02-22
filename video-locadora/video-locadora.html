@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vídeo Locadora</title>
+</head>
+<body>
+    <h1>Vídeo Locodora JS</h1>
+    <form>
+        <p><label for="titulo-filme">Título do Filme:</label>
+        <input type="text" id="titulodofilme" placeholder="Digite o nome do filme"></p>
+        <p><label for="duracao-filme">Duração (min):</label>
+        <input type="number" id="duracaodofilmeemminutos" placeholder="Digite a duração do filme"></p>
+        <p><input type="button" id="converteduracaodofilmeemhoraseminutos" value="Converter em Horas e Minutos"></p>
+        <p id="exibenomefilme"></p>
+        <p id="respostaduracaofilme"></p>
+
+        <script>
+            function calcularDuracao () {
+                let tituloDoFilme = document.querySelector('#titulodofilme').value;
+                let durcaoDoFilmeEmMinutos = document.querySelector('#duracaodofilmeemminutos').value;
+                let exibeNomeDoFilme = document.querySelector('#exibenomefilme').innerText = tituloDoFilme;
+
+                let calculoDeHorasDoFilme = Math.floor(durcaoDoFilmeEmMinutos / 60);
+                let calculoDeMinutosDoFilme = Math.floor(durcaoDoFilmeEmMinutos % 60);
+                let converteDuracaoDoFilmeEmHorasEMinutos = document.querySelector('#respostaduracaofilme')
+                converteDuracaoDoFilmeEmHorasEMinutos.innerText = calculoDeHorasDoFilme +  'hora(s) e ' + calculoDeMinutosDoFilme + ' minuto(s)';
+            }
+            let resultadoDuracaoDoFilme = document.querySelector('#converteduracaodofilmeemhoraseminutos');
+            resultadoDuracaoDoFilme.addEventListener('click', calcularDuracao);
+        </script>
+
+    </form>
+</body>
+</html>
