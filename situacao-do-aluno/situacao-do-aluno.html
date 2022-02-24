@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação do aluno</title>
+</head>
+<body>
+    <h1>Programa Situação do Aluno</h1>
+    <form>
+        <p>
+            <label for="nome-do-aluno">Nome do aluno</label>
+            <input type="text" id="nomedoaluno" placeholder="Digite o nome do aluno">
+        </p>
+        <p>
+            <label for="nota-1">1ª Nota:</label>
+            <input type="number" id="nota1" placeholder="Digite usando ponto: 9.0">
+        </p>
+        <p>
+            <label for="nota-2">2ª Nota:</label>
+            <input type="number" id="nota2" placeholder="Digite usando ponto: 9.0">
+        </p>
+        <input type="button" id="exibirsituacaodoaluno" value="Exibir Média e Situação">
+        <p id="exibirmediadasnotas"></p>
+        <p id="exibirmensagemdeaprovacaooureprovacao"></p>
+    </form>
+        
+    <script>
+        function calcularResultadoDoAluno() {
+            let nomeDoAluno = document.querySelector('#nomedoaluno').value;
+            let primeiraNota = Number(document.querySelector('#nota1').value);
+            let segundaNota = Number(document.querySelector('#nota2').value);
+
+            let arrayDeNotas = [primeiraNota, segundaNota];
+            let calculaMediaDasNotas = 0;
+            for(let i = 0; i < arrayDeNotas.length; i++){
+                calculaMediaDasNotas += arrayDeNotas[i] / arrayDeNotas.length;
+            }
+            let exibirMediasDasNotas = document.querySelector('#exibirmediadasnotas');
+            exibirMediasDasNotas.innerText = 'Média das notas: ' + calculaMediaDasNotas;
+
+            let exibirMensagemDeAprovacao;
+            let exibirMensagemDeReprovacao;
+            if(calculaMediaDasNotas >= 7) {
+                exibirMensagemDeAprovacao = document.querySelector('#exibirmensagemdeaprovacaooureprovacao');
+                exibirMensagemDeAprovacao.innerText = 'Parabéns! ' + nomeDoAluno + '. Aluno(a) aprovado(a)!'
+            }else {
+                exibirMensagemDeReprovacao = document.querySelector('#exibirmensagemdeaprovacaooureprovacao');
+                exibirMensagemDeReprovacao.innerText = 'Ops... ' + nomeDoAluno + '. Aluno(a) foi reprovado(a)!'
+            }
+        }
+        let exibirMensagemDeAprovacaoOuReprovacao = document.querySelector('#exibirsituacaodoaluno');
+        exibirMensagemDeAprovacaoOuReprovacao.addEventListener('click', calcularResultadoDoAluno);
+
+    </script>
+</body>
+</html>
