@@ -45,6 +45,7 @@
             if(calculaMediaDasNotas >= 7) {
                 exibirMensagemDeAprovacao = document.querySelector('#exibirmensagemdeaprovacaooureprovacao');
                 exibirMensagemDeAprovacao.innerText = 'Parabéns! ' + nomeDoAluno + '. Aluno(a) aprovado(a)!'
+            //Adicionando uma terceira condição possível - else if {o caso do aluno ficar de recuperação nota >= 4}
             }else {
                 exibirMensagemDeReprovacao = document.querySelector('#exibirmensagemdeaprovacaooureprovacao');
                 exibirMensagemDeReprovacao.innerText = 'Ops... ' + nomeDoAluno + '. Aluno(a) foi reprovado(a)!'
