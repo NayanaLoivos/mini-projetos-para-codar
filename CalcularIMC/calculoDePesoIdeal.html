@@ -4,9 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
     <title>Peso Ideal</title>
 </head>
 <body>
+
     <h1>Programa Cálculo de Peso Ideal</h1>
+    <div>
+    <img src="./Foto-de-Ketut-Subiyanto-no-Pexels.jpg" alt="Foto de uma balança de peso vermelha num piso cinza e dos pés de uma pessoa de cor parda.">
+    <blockquote>foto-de-Ketut-Subiyanto-no-Pexels</blockquote>
+    </div>
+    <p>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" placeholder="digite seu nome">
+    </p>
+    <p>
+    <label for="sexo">Sexo:</label>
+    <input type="radio" name="sexo" id="masculino">Masculino
+    <input type="radio" name="sexo" id="feminino">Feminino
+    </p>
+    <p>
+    <label for="altura">Altura:</label>
+    <input type="number" id="altura" placeholder="digite sua altura">
+    </p>
+    <button id="calculapeso">Calcular Peso Ideal</button>
+    <button id="limparcampos">Limpar Campos</button>
+    <h3 id="resultadoIMC">'"Vai aparecer resultado"'</h3>
+
+    <script src="./index.js"></script>
+    
 </body>
 </html>
