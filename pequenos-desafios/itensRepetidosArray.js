@@ -3,9 +3,9 @@
 //1)Resolução 1:
 let arrayRepetido = [1,2,3,3,2,4,5,4,7,3,10,10,89,90];
 
-let arraySemRepetição = [...new Set(arrayRepetido)];
+let arraySemRepeticao = [...new Set(arrayRepetido)];
 
-console.log(arraySemRepetição);
+console.log(arraySemRepeticao);
 
 //2)Resolução 2:
 
@@ -17,3 +17,5 @@ for(let item of arrayRepetido) {
     }
 };
  console.log(arraySemRepetir);
+
+ 
